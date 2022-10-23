@@ -28,5 +28,10 @@ class SuperHeroesListActivity : AppCompatActivity() {
             val work = apiClient.getSuperHeroWork(620)
             Log.d("@dev", "Trabajo: $work")
         }.start()
+
+        Thread {
+            val superhero = apiClient.getSuperHeroById(620)
+            Log.d("@dev", "Superheroe: $superhero")
+        }.start()
     }
 }

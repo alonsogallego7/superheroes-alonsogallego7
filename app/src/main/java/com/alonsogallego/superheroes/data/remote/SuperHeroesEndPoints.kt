@@ -16,4 +16,7 @@ interface SuperHeroesEndPoints {
 
     @GET("work/{superheroId}.json")
     fun getSuperHeroWork(@Path("superheroId") superheroId: Int): Call<SuperHeroWorkApiModel>
+
+    @GET("id/{superheroId}.json")
+    fun getSuperHeroById(@Path("superheroId") superheroId: Int): Call<SuperHeroApiModel>
 }

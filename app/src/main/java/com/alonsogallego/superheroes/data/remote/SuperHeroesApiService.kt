@@ -54,4 +54,14 @@ class SuperHeroesApiService {
             null
         }
     }
+
+    fun getSuperHeroById(superheroId: Int): SuperHeroApiModel? {
+        val callSuperHeroById = apiEndPoints.getSuperHeroById(superheroId)
+        val response = callSuperHeroById.execute()
+        return if (response.isSuccessful) {
+            response.body()
+        } else{
+            null
+        }
+    }
 }
