@@ -1,17 +1,20 @@
 package com.alonsogallego.superheroes.data
 
 import com.alonsogallego.superheroes.data.local.SuperHeroLocalDataSource
+import com.alonsogallego.superheroes.data.remote.SuperHeroesApiService
+import com.alonsogallego.superheroes.data.remote.models.SuperHeroApiModel
 import com.alonsogallego.superheroes.domain.SuperHero
+import com.alonsogallego.superheroes.domain.SuperHeroesRepository
 
-class SuperHeroRepository(
+class SuperHeroesDataRepository(
     val localSource: SuperHeroLocalDataSource,
-) {
+): SuperHeroesRepository {
 
     fun saveSuperHeroes(superHeroes: List<SuperHero>) {
         localSource.saveSuperheroes(superHeroes)
     }
 
-    fun getSuperhero(): List<SuperHero> {
+    override fun getSuperheroes(): List<SuperHero> {
         var superheroes = localSource.getSuperheroes()
         return superheroes
     }
