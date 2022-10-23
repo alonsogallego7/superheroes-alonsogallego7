@@ -7,6 +7,10 @@ class SuperHeroRepository(
     val localSource: SuperHeroLocalDataSource,
 ) {
 
+    fun saveSuperHeroes(superHeroes: List<SuperHero>) {
+        localSource.saveSuperheroes(superHeroes)
+    }
+
     fun getSuperhero(): List<SuperHero> {
         var superheroes = localSource.getSuperheroes()
         return superheroes
