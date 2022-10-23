@@ -3,7 +3,7 @@ package com.alonsogallego.superheroes.data
 import com.alonsogallego.superheroes.data.local.SuperHeroLocalDataSource
 import com.alonsogallego.superheroes.domain.SuperHero
 
-class UserRepository(
+class SuperHeroRepository(
     val localSource: SuperHeroLocalDataSource,
 ) {
 
