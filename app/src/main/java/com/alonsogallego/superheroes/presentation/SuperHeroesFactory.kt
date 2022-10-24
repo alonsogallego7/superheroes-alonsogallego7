@@ -1,6 +1,7 @@
 package com.alonsogallego.superheroes.presentation
 
 import android.content.SharedPreferences
+import com.alonsogallego.commons.MoshiJSerializer
 import com.alonsogallego.superheroes.data.SuperHeroesDataRepository
 import com.alonsogallego.superheroes.data.local.SuperHeroLocalDataSource
 import com.alonsogallego.superheroes.domain.GetSuperHeroesFeedUseCase
@@ -11,7 +12,7 @@ class SuperHeroesFactory {
             return SuperHeroesListViewModel(
                 GetSuperHeroesFeedUseCase(
                     SuperHeroesDataRepository(
-                        SuperHeroLocalDataSource(sharedPreferences),
+                        SuperHeroLocalDataSource(sharedPreferences, MoshiJSerializer()),
                     )
                 )
             )
