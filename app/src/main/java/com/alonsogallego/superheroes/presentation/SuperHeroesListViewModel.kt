@@ -8,7 +8,7 @@ import com.alonsogallego.superheroes.domain.SuperHero
 class SuperHeroesListViewModel(private val superHeroesFeedUseCase: GetSuperHeroesFeedUseCase) :
     ViewModel() {
 
-    fun obtainSuperHeroes(): List<SuperHeroApiModel>? {
+    fun obtainSuperHeroes(): List<SuperHero> {
         return superHeroesFeedUseCase.execute()
     }
 }
