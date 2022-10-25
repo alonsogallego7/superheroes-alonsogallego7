@@ -1,14 +1,16 @@
 package com.alonsogallego.superheroes.presentation
 
 import androidx.lifecycle.ViewModel
-import com.alonsogallego.superheroes.data.remote.models.SuperHeroApiModel
 import com.alonsogallego.superheroes.domain.GetSuperHeroesFeedUseCase
-import com.alonsogallego.superheroes.domain.SuperHero
+import kotlin.concurrent.thread
 
 class SuperHeroesListViewModel(private val superHeroesFeedUseCase: GetSuperHeroesFeedUseCase) :
     ViewModel() {
 
-    fun obtainSuperHeroes(): List<SuperHero> {
-        return superHeroesFeedUseCase.execute()
+    fun obtainSuperHeroes(callback: SuperHeroesCallback) {
+        thread {
+            val superHeroes = superHeroesFeedUseCase.execute()
+            callback.onCall(superHeroes)
+        }
     }
 }

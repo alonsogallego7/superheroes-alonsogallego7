@@ -1,7 +1,6 @@
 package com.alonsogallego.superheroes.domain
 
-import com.alonsogallego.superheroes.data.remote.models.SuperHeroApiModel
-
 interface SuperHeroesRepository {
+    fun saveSuperheroes(superHeroes: List<SuperHero>)
     fun getSuperheroes(): List<SuperHero>
 }
