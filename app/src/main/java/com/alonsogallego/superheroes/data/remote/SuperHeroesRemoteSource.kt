@@ -1,4 +1,11 @@
 package com.alonsogallego.superheroes.data.remote
 
-class SuperHeroesRemoteSource {
+import com.alonsogallego.superheroes.domain.SuperHero
+
+class SuperHeroesRemoteSource(val apiClient: SuperHeroesApiService) {
+
+    fun getSuperHeroes(): List<SuperHero>? =
+        apiClient.getSuperheroes()?.map { apiSuperHeroe ->
+            apiSuperHeroe.toDomain()
+        }
 }
