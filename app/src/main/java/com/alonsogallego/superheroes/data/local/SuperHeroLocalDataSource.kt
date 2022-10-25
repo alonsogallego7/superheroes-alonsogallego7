@@ -3,7 +3,6 @@ package com.alonsogallego.superheroes.data.local
 import android.content.SharedPreferences
 import com.alonsogallego.commons.KSerializer
 import com.alonsogallego.superheroes.domain.SuperHero
-import com.google.gson.Gson
 
 class SuperHeroLocalDataSource(
     private val sharedPref: SharedPreferences,

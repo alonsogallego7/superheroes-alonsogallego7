@@ -20,7 +20,7 @@ class SuperHeroesDataRepository(
         return superheroes
     }
 
-    fun getSuperheroById(superheroId: Int): SuperHero? {
+    override fun getSuperheroById(superheroId: Int): SuperHero? {
         var superhero = localSource.findById(superheroId)
         return superhero
     }

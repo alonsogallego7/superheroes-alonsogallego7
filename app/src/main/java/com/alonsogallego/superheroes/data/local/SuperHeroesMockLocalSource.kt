@@ -11,9 +11,9 @@ class SuperHeroesMockLocalSource : SuperHeroesLocalSource {
     override fun getSuperheroes(): List<SuperHero> {
         Thread.sleep(5000)
         return mutableListOf(
-            SuperHero(1, "SuperMan", SuperHero.Images("")),
-            SuperHero(2, "SpiderMan", SuperHero.Images("")),
-            SuperHero(3, "CatWoman", SuperHero.Images(""))
+            SuperHero(1, "SuperMan", ""),
+            SuperHero(2, "SpiderMan", ""),
+            SuperHero(3, "CatWoman", "")
         )
     }
 
