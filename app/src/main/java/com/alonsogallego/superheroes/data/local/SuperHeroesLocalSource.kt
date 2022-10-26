@@ -5,5 +5,5 @@ import com.alonsogallego.superheroes.domain.SuperHero
 interface SuperHeroesLocalSource {
     fun saveSuperheroes(superHeroes: List<SuperHero>)
     fun getSuperheroes(): List<SuperHero>
-    fun findById(superHeroeId: Int): SuperHero?
+    fun findById(superHeroId: Int): SuperHero?
 }
