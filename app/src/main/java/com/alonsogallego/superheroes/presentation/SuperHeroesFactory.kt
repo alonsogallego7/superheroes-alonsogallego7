@@ -7,6 +7,8 @@ import com.alonsogallego.commons.MoshiJSerializer
 import com.alonsogallego.superheroes.data.SuperHeroesDataRepository
 import com.alonsogallego.superheroes.data.local.SuperHeroLocalDataSource
 import com.alonsogallego.superheroes.data.local.SuperHeroesMockLocalSource
+import com.alonsogallego.superheroes.data.remote.SuperHeroesApiService
+import com.alonsogallego.superheroes.data.remote.SuperHeroesRemoteSource
 import com.alonsogallego.superheroes.domain.GetSuperHeroesFeedUseCase
 
 class SuperHeroesFactory {
@@ -18,7 +20,8 @@ class SuperHeroesFactory {
             return SuperHeroesListViewModel(
                 GetSuperHeroesFeedUseCase(
                     SuperHeroesDataRepository(
-                        SuperHeroesMockLocalSource()
+                        SuperHeroLocalDataSource(sharedPreferences, GsonJSerializer()),
+                        SuperHeroesRemoteSource(SuperHeroesApiService())
                     )
                 )
             )

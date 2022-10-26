@@ -15,7 +15,9 @@ class SuperHeroesListViewModel(private val superHeroesFeedUseCase: GetSuperHeroe
         viewModelScope.launch(Dispatchers.IO) {
             val superHeroes = superHeroesFeedUseCase.execute()
             withContext(Dispatchers.Main) {
-                callback.onCall(superHeroes)
+                if (superHeroes != null) {
+                    callback.onCall(superHeroes)
+                }
             }
         }
     }
