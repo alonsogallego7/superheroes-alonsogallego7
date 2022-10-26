@@ -9,15 +9,28 @@ class SuperHeroesMockLocalSource : SuperHeroesLocalSource {
     }
 
     override fun getSuperheroes(): List<SuperHero> {
-        Thread.sleep(5000)
         return mutableListOf(
-            SuperHero(1, "SuperMan", ""),
-            SuperHero(2, "SpiderMan", ""),
-            SuperHero(3, "CatWoman", "")
+            SuperHero(1, "SuperMan", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(2, "SpiderMan", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(3, "CatWoman", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(1, "SuperMan", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(2, "SpiderMan", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(3, "CatWoman", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(1, "SuperMan", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(2, "SpiderMan", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(3, "CatWoman", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(1, "SuperMan", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(2, "SpiderMan", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(3, "CatWoman", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(1, "SuperMan", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(2, "SpiderMan", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(3, "CatWoman", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(1, "SuperMan", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(2, "SpiderMan", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
+            SuperHero(3, "CatWoman", "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg"),
         )
     }
 
-    override fun findById(superHeroeId: Int): SuperHero? {
-        TODO("Not yet implemented")
-    }
+    override fun findById(superHeroeId: Int): SuperHero? =
+        getSuperheroes().first { it.id == superHeroeId }
 }

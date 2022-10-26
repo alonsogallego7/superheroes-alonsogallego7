@@ -8,7 +8,7 @@ import com.alonsogallego.superheroes.domain.SuperHero
 import com.alonsogallego.superheroes.domain.SuperHeroesRepository
 
 class SuperHeroesDataRepository(
-    val localSource: SuperHeroLocalDataSource,
+    val localSource: SuperHeroesMockLocalSource,
 ): SuperHeroesRepository {
 
     override fun saveSuperheroes(superHeroes: List<SuperHero>) {
@@ -23,10 +23,6 @@ class SuperHeroesDataRepository(
     override fun getSuperheroById(superheroId: Int): SuperHero? {
         var superhero = localSource.findById(superheroId)
         return superhero
-    }
-
-    fun removeSuperhero(superheroId: Int) {
-        localSource.remove(superheroId)
     }
 
 }
