@@ -1,8 +1,9 @@
-package com.alonsogallego.superheroes.data.local
+package com.alonsogallego.superheroes.data.local.memory
 
+import com.alonsogallego.superheroes.data.local.SuperHeroesLocalDataSource
 import com.alonsogallego.superheroes.domain.SuperHero
 
-class SuperHeroesMockLocalSource : SuperHeroesLocalSource {
+class SuperHeroesMockLocalSource : SuperHeroesLocalDataSource {
 
     override fun saveSuperheroes(superHeroes: List<SuperHero>) {
         TODO("Not yet implemented")
@@ -33,4 +34,6 @@ class SuperHeroesMockLocalSource : SuperHeroesLocalSource {
 
     override fun findById(superHeroeId: Int): SuperHero? =
         getSuperheroes().first { it.id == superHeroeId }
+
+    override fun delete(superHeroeId: Int) {}
 }

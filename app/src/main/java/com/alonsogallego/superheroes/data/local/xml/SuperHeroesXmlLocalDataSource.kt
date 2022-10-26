@@ -1,13 +1,14 @@
-package com.alonsogallego.superheroes.data.local
+package com.alonsogallego.superheroes.data.local.xml
 
 import android.content.SharedPreferences
 import com.alonsogallego.commons.KSerializer
+import com.alonsogallego.superheroes.data.local.SuperHeroesLocalDataSource
 import com.alonsogallego.superheroes.domain.SuperHero
 
-class SuperHeroLocalDataSource(
+class SuperHeroesXmlLocalDataSource (
     private val sharedPref: SharedPreferences,
     private val jSerializer: KSerializer
-): SuperHeroesLocalSource {
+): SuperHeroesLocalDataSource {
 
     override fun saveSuperheroes(superheroes: List<SuperHero>) {
         superheroes.forEach {
