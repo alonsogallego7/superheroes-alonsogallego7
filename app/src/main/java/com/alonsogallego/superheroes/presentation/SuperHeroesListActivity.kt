@@ -1,15 +1,11 @@
 package com.alonsogallego.superheroes.presentation
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.alonsogallego.superheroes.R
 import com.alonsogallego.superheroes.databinding.ActivitySuperheroesBinding
 import com.alonsogallego.superheroes.domain.SuperHero
-import com.alonsogallego.superheroes.presentation.adapter.SuperHeroAdapter
+import com.alonsogallego.superheroes.presentation.adapter.list.SuperHeroAdapter
 
 class SuperHeroesListActivity : AppCompatActivity() {
 

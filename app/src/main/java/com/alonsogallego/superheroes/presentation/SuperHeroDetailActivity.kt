@@ -7,6 +7,7 @@ import android.os.Bundle
 import com.alonsogallego.superheroes.R
 
 class SuperHeroDetailActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_super_hero_detail)

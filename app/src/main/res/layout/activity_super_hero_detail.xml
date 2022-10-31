@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@id/fullName" />
 
     <TextView
-        android:id="@+id/stat1"
+        android:id="@+id/intelligence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -69,18 +69,18 @@
         app:layout_constraintTop_toBottomOf="@id/group" />
 
     <TextView
-        android:id="@+id/stat2"
+        android:id="@+id/speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:text="Velocidad"
         android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@id/stat1"
-        app:layout_constraintEnd_toStartOf="@id/stat3"
+        app:layout_constraintStart_toEndOf="@id/intelligence"
+        app:layout_constraintEnd_toStartOf="@id/combat"
         app:layout_constraintTop_toBottomOf="@id/group" />
 
     <TextView
-        android:id="@+id/stat3"
+        android:id="@+id/combat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -88,6 +88,34 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@id/img"
         app:layout_constraintTop_toBottomOf="@id/group" />
+
+    <TextView
+        android:id="@+id/stat1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="1"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/intelligence"
+        app:layout_constraintTop_toBottomOf="@id/intelligence" />
+    <TextView
+        android:id="@+id/stat2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:layout_marginLeft="25dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/speed"
+        app:layout_constraintTop_toBottomOf="@id/speed" />
+    <TextView
+        android:id="@+id/stat3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:layout_marginLeft="25dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/combat"
+        app:layout_constraintTop_toBottomOf="@id/combat" />
 
     <ImageView
         android:id="@+id/img2"
