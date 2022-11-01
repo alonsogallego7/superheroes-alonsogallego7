@@ -6,13 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alonsogallego.superheroes.R
 import com.alonsogallego.superheroes.domain.SuperHero
-import com.alonsogallego.superheroes.presentation.adapter.list.SuperHeroViewHolder
 
 class SuperHeroDetailAdapter : RecyclerView.Adapter<SuperHeroDetailViewHolder>() {
     private val dataSet: MutableList<SuperHero> = mutableListOf()
-    fun loadList(superHeroes: List<SuperHero>) {
+    fun loadSuperHero(superHero: SuperHero) {
         dataSet.clear()
-        dataSet.addAll(superHeroes)
+        dataSet.add(superHero)
         notifyDataSetChanged()
     }
 

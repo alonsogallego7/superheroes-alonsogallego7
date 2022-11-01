@@ -1,7 +1,7 @@
 package com.alonsogallego.superheroes.domain
 
 class GetSuperHeroFeedUseCase (val repository: SuperHeroesRepository) {
-    fun execute(): SuperHero? {
-        return repository.getSuperheroById(1)
+    fun execute(superHeroId: Int): SuperHero? {
+        return repository.getSuperheroById(superHeroId)
     }
 }
