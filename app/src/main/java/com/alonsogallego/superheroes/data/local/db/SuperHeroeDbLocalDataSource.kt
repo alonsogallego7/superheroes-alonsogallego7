@@ -17,7 +17,7 @@ class SuperHeroeDbLocalDataSource(val applicationContext: Context) : SuperHeroes
         TODO("Not yet implemented")
     }
 
-    override fun getAll() = db.superHeroeDao().getAll().map { superHeroeEntity ->
+    override fun getAll() = db.SuperHeroeDao().getAll().map { superHeroeEntity ->
         superHeroeEntity.toDomain()
     }
 
