@@ -21,6 +21,7 @@ import com.alonsogallego.superheroes.data.superheroe.SuperHeroDataRepository
 import com.alonsogallego.superheroes.data.superheroe.local.db.SuperHeroDbLocalDataSource
 import com.alonsogallego.superheroes.data.superheroe.remote.api.SuperHeroApiRemoteDataSource
 import com.alonsogallego.superheroes.data.work.WorkDataRepository
+import com.alonsogallego.superheroes.data.superheroe.local.mem.SuperHeroMemLocalDataSource
 import com.alonsogallego.superheroes.data.work.local.mem.WorkMemLocalDataSource
 import com.alonsogallego.superheroes.data.work.remote.api.WorkApiRemoteDataSource
 import com.alonsogallego.superheroes.domain.*
@@ -92,15 +93,15 @@ class SuperHeroFactory {
 
     fun getWorkRepository(): WorkRepository {
         return WorkDataRepository(
-            WorkMemLocalDataSource(),
+            WorkMemLocalDataSource(MemDataStore()),
             WorkApiRemoteDataSource(getApiClient())
         )
     }
 
     fun getAppearanceRepository(): AppearanceRepository {
         return AppearanceDataRepository(
-            AppearanceMemLocalDataSource(),
-            AppearanceApiRemoteDataSource()
+            AppearanceMemLocalDataSource(MemDataStore()),
+            AppearanceApiRemoteDataSource(getApiClient())
         )
     }
 

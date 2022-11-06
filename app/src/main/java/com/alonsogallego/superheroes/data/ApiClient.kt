@@ -1,10 +1,11 @@
 package com.alonsogallego.superheroes.data
 
+import com.alonsogallego.superheroes.data.appearance.remote.api.AppearanceApiModel
 import com.alonsogallego.superheroes.data.biography.remote.api.BiographyApiModel
 import com.alonsogallego.superheroes.data.connections.remote.api.ConnectionsApiModel
-import com.iesam.superhero.data.powerstats.remote.api.PowerStatsApiModel
 import com.alonsogallego.superheroes.data.superheroe.remote.api.SuperHeroApiModel
 import com.alonsogallego.superheroes.data.work.remote.api.WorkApiModel
+import com.iesam.superhero.data.powerstats.remote.api.PowerStatsApiModel
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -65,6 +66,11 @@ class ApiClient {
 
     fun getPowerStats(superHeroId: Int): PowerStatsApiModel? {
         val call = apiServices.getPowerstats(superHeroId).execute()
+        return call.body()
+    }
+
+    fun getAppearance(superHeroId: Int): AppearanceApiModel? {
+        val call = apiServices.getAppearance(superHeroId).execute()
         return call.body()
     }
 }

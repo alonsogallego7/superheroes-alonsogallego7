@@ -5,7 +5,7 @@ import com.alonsogallego.superheroes.domain.Connections
 
 class ConnectionsDbLocalDataSource(private val dao: ConnectionsDao) : ConnectionsLocalDataSource {
 
-    override fun findByHeroId(heroId: Int): Connections? {
+    override fun getConnections(heroId: Int): Connections? {
         return dao.findById(heroId)?.toDomain()
     }
 

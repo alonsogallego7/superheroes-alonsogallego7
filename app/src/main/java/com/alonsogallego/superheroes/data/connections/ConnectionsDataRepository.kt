@@ -12,7 +12,7 @@ class ConnectionsDataRepository(
     ConnectionsRepository {
 
     override fun getConnections(superHeroId: Int): Connections {
-        var connections = localDataSource.findByHeroId(superHeroId)
+        var connections = localDataSource.getConnections(superHeroId)
         if (connections == null) {
             connections = remoteDataSource.getConnections(superHeroId)
             localDataSource.save(superHeroId, connections)
