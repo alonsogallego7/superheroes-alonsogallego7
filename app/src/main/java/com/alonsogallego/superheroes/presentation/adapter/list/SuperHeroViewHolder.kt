@@ -1,4 +1,4 @@
-package com.alonsogallego.superheroes.presentation.adapter
+package com.alonsogallego.superheroes.presentation.adapter.list
 
 import android.view.View
 import android.widget.ImageView
@@ -16,7 +16,8 @@ class SuperHeroViewHolder(private val view: View) : RecyclerView.ViewHolder(view
             model.imageUrl
         )
         view.findViewById<TextView>(R.id.name).text = model.name
-        view.findViewById<TextView>(R.id.fullName).text = model.id.toString()
+        view.findViewById<TextView>(R.id.fullName).text = model.fullName
+        view.findViewById<TextView>(R.id.work).text = model.occupation
     }
 
 }

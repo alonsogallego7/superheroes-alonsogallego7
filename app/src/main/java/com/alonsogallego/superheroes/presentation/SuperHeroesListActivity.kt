@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alonsogallego.superheroes.databinding.ActivitySuperheroesBinding
 import com.alonsogallego.superheroes.domain.SuperHero
-import com.alonsogallego.superheroes.presentation.adapter.SuperHeroAdapter
+import com.alonsogallego.superheroes.presentation.adapter.list.SuperHeroAdapter
 
 class SuperHeroesListActivity : AppCompatActivity() {
 
