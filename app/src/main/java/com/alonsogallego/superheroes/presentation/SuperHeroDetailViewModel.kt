@@ -1,23 +1,23 @@
 package com.alonsogallego.superheroes.presentation
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.alonsogallego.superheroes.domain.GetSuperHeroFeedUseCase
+import com.alonsogallego.superheroes.domain.GetSuperHeroDetailUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
-class SuperHeroDetailViewModel (private val superHeroesFeedUseCase: GetSuperHeroFeedUseCase) :
+class SuperHeroDetailViewModel(private val getSuperHeroDetailUseCase: GetSuperHeroDetailUseCase) :
     ViewModel() {
 
-    fun obtainSuperHero(superHeroId: Int, callback: SuperHeroCallback) {
+    val superHeroDetailPublisher: MutableLiveData<GetSuperHeroDetailUseCase.SuperHeroDetail> by lazy {
+        MutableLiveData<GetSuperHeroDetailUseCase.SuperHeroDetail>()
+    }
+
+    fun loadSuperHeroDetails(superHeroId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            val superHero = superHeroesFeedUseCase.execute(superHeroId)
-            withContext(Dispatchers.Main) {
-                if (superHero != null) {
-                    callback.onCall(superHero)
-                }
-            }
+            superHeroDetailPublisher.postValue(getSuperHeroDetailUseCase.execute(superHeroId))
         }
     }
+
 }
